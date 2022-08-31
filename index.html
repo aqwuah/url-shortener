@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Atomic URL</title>
+        <title>URL Shortener</title>
         <link rel="icon" type="image/png" href="favicons/000000-external-atom-energy-and-ecology-dreamstale-green-shadow-dreamstale.png">
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
         <script src="js/15181efa86.js" crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
                 const originalUrl = originalUrlElement.value
                 const body = JSON.stringify({ originalUrl })
             
-                fetch('/api/url', { method: 'POST', body })
+                fetch('/url', { method: 'POST', body })
                     .then((data) => data.json())
                     .then((data) => {
                         statusElement.classList.remove('is-loading')
@@ -59,15 +59,6 @@
             <div class="columns is-multiline">
                 <div class="column is-8 is-offset-2 register">
                     <div class="columns">
-                        <div class="column left">
-                            <h1 class="title is-1">Atomic URL</h1>
-                            <h2 class="subtitle colored is-4">A URL shortener POC built using Cloudflare Worker.</h2>
-                            <p>Designing a URL shortener such as <a href="https://tinyurl.com/">TinyURL</a> and <a href="https://bitly.com/">Bitly</a> is one of the most common System Design interview questions in software engineering.</p>
-                            
-                            <p>While meddling around with <a href="https://workers.cloudflare.com/">Cloudflare Worker</a>, it gave me an idea to build an actual URL shortener that can be used by anyone.</p>
-                            
-                            <p>This is a proof of concept (POC) of how one builds an actual URL shortener service using serverless computing (<a href="https://github.com/ngshiheng/atomic-url">source code</a>).</p>
-                        </div>
                         <div class="column right has-text-centered icon-text">
                             <h1 class="title is-4">Shorten A URL</h1>
                             <div class="icon-text">
@@ -79,7 +70,7 @@
                             
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-link is-primary is-medium is-rounded" type="url" placeholder="https://jerrynsh.com/" id="url" required>
+                                    <input class="input is-link is-primary is-medium is-rounded" type="url" placeholder="https://aqwuah.com/" id="url" required>
                                 </div>
                             </div>
                             <button id="submit" class="button is-block is-primary is-rounded is-fullwidth is-medium" onclick="submitURL()">Shorten</button>
@@ -98,7 +89,7 @@
                     <nav class="level">
                         <div class="level-right">
                             <small class="level-item" style="color: var(--textLight)">
-                            &copy; Atomic URL by&amp;nbsp<a href="https://jerrynsh.com/">Jerry Ng</a>. All Rights Reserved.
+                            &copy; URL Shortener by Aqwuah. All rights reserved.
                             </small>
                         </div>
                     </nav>
