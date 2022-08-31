@@ -4,6 +4,7 @@ from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
 from starlette.datastructures import URL
+import uvicorn
 
 from . import models, schemas, crud
 from .database import SessionLocal, engine
