@@ -24,7 +24,7 @@
                 const originalUrl = originalUrlElement.value
                 const body = JSON.stringify({ originalUrl })
             
-                fetch('/url', { method: 'POST', body })
+                fetch('/url', { method: 'POST', "target_url":originalUrlElement })
                     .then((data) => data.json())
                     .then((data) => {
                         statusElement.classList.remove('is-loading')
