@@ -24,16 +24,12 @@
                 const originalUrl = originalUrlElement.value
                 const body = JSON.stringify({ originalUrl })
             
-                fetch('/url', { method: 'POST', "target_url":originalUrlElement })
-                    .then((data) => data.json())
-                    .then((data) => {
-                        statusElement.classList.remove('is-loading')
-                        statusElement.innerHTML = data.shortUrl
-                    })
-                    .catch((error) => {
-                        statusElement.classList.remove('is-loading')
-                        statusElement.innerHTML = '&#9940; Daily Limit Exceeded'
-                    })
+                fetch("https://sub.domain.com/url", {
+                    method: "POST",
+                    body: {
+                        target_url: "string"
+                    }
+                });
             
                 originalUrlElement.value = ''
             }
