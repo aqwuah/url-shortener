@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>URL Shortener</title>
-        <link rel="icon" type="image/png" href="favicons/000000-external-atom-energy-and-ecology-dreamstale-green-shadow-dreamstale.png">
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
         <script src="js/15181efa86.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css">
@@ -24,12 +23,12 @@
                 const originalUrl = originalUrlElement.value
                 const body = JSON.stringify({ originalUrl })
             
-                fetch("https://sub.domain.com/url", {
+                fetch("https://url.aqwuah.com/url", {
                     method: "POST",
                     body: {
-                        target_url: "string"
+                        "target_url": originalUrlElement
                     }
-                });
+                }).then(document.getElementById("status").innerText = res.url);
             
                 originalUrlElement.value = ''
             }
@@ -58,9 +57,6 @@
                         <div class="column right has-text-centered icon-text">
                             <h1 class="title is-4">Shorten A URL</h1>
                             <div class="icon-text">
-                                <span class="icon has-text-info">
-                                <i class="fas fa-info-circle"></i>
-                                </span>
                                 <span class="description">Enter a valid URL to shorten</span>
                             </div>
                             
@@ -72,9 +68,6 @@
                             <button id="submit" class="button is-block is-primary is-rounded is-fullwidth is-medium" onclick="submitURL()">Shorten</button>
                             <br>
                             <button class="button is-info is-rounded is-small" onclick="copyToClipboard('status')">
-                            <span class="icon">
-                            <i class="fas fa-copy"></i>
-                            </span>
                             <span id="status"></span>
                             </button>
                         </div>
