@@ -14,7 +14,7 @@ from .database import SessionLocal, engine
 from .config import get_settings
 
 routes = [
-    Mount('/', app=StaticFiles(directory='web', html=True), name="static"),
+    Mount('/shortener', app=StaticFiles(directory='web', html=True), name="static"),
 ]
 
 app = FastAPI(routes=routes)
