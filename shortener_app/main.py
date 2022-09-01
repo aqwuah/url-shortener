@@ -29,7 +29,7 @@ def raise_not_found(request):
 
 @app.get("/")
 def read_root():
-    return "Aqwuah's URL Shortener API"
+    return "URL Shortener API"
 
 @app.post("/url", response_model=schemas.URLInfo)
 def create_url(url: schemas.URLBase, db: Session = Depends(get_db)):
@@ -39,7 +39,10 @@ def create_url(url: schemas.URLBase, db: Session = Depends(get_db)):
    # db_url = models.URL(
   #      target_url=url.target_url, key=key, secret_key=secret_key
    # )
-    db_url = crud.create_db_url(db=db, url=url)
+    if db_url == "string":
+        db_url = crud.create_db_url(db=db, url=url)
+    else:
+      db_url = url.db_url
     db.add(db_url)
     db.commit()
     db.refresh(db_url)
