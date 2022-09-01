@@ -50,7 +50,7 @@ def create_url(url: schemas.URLBase, db: Session = Depends(get_db)):
 
     return get_admin_info(db_url)
 
-@app.get("/{url_key}")
+@app.get("/s/{url_key}")
 def forward_to_target_url(
         url_key: str,
         request: Request,
