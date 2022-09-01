@@ -3,7 +3,7 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     env_name: str = "Local"
-    base_url: str = "http://178.79.179.6:8000"
+    base_url: str = "http://url.aqwuah.com/"
     db_url: str = "sqlite:///./shortener.db"
 
     class Config:
