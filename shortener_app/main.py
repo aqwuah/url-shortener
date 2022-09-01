@@ -5,12 +5,19 @@ from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
 from starlette.datastructures import URL
 import uvicorn
+from starlette.applications import Starlette
+from starlette.routing import Mount
+from starlette.staticfiles import StaticFiles
 
 from . import models, schemas, crud
 from .database import SessionLocal, engine
 from .config import get_settings
 
-app = FastAPI()
+routes = [
+    Mount('/', app=StaticFiles(directory='/web', html=True), name="static"),
+]
+
+app = FastAPI(routes=routes)
 models.Base.metadata.create_all(bind=engine)
 
 def get_db():
