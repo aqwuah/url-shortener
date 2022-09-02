@@ -28,7 +28,7 @@
                     method: "POST",
                     body: body, 
                     headers: { "Content-Type": "application/json" }
-                }).then(response => response.json()).then(data => document.getElementById("status").innerText = "http://url.aqwuah.com/s/" + data.url.slice(-5))
+                }).then(response => response.json()).then(data => document.getElementById("status").innerText = "📋 http://url.aqwuah.com/s/" + data.url.slice(-5))
             
                 originalUrlElement.value = ''
             }
@@ -68,7 +68,7 @@
                             <button id="submit" class="button is-block is-primary is-rounded is-fullwidth is-medium" onclick="submitURL()">Shorten</button>
                             <br>
                             <button class="button is-info is-rounded is-small" onclick="copyToClipboard('status')">
-                            <span id="status"></span>
+                            <span id="status">📋 Click to copy!</span>
                             </button>
                         </div>
                     </div>
