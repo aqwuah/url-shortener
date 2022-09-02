@@ -28,7 +28,7 @@
                     method: "POST",
                     body: body, 
                     headers: { "Content-Type": "application/json" }
-                }).then(response => response.json()).then(data => document.getElementById("status").innerText = "📋 http://url.aqwuah.com/s/" + data.url.slice(-5))
+                }).then(response => response.json()).then(data => document.getElementById("status").innerText = "http://url.aqwuah.com/s/" + data.url.slice(-5))
             
                 originalUrlElement.value = ''
             }
