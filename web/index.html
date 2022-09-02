@@ -28,8 +28,8 @@
                     method: "POST",
                     body: body, 
                     headers: { "Content-Type": "application/json" }
-                }).then(response => {const jsonResponse = response.json() 
-                    document.getElemenyById("status").innerText = jsonResponse.url})
+                }).then(response => {const jsonResponse = response.json()
+                document.getElementById("status").innerText = jsonResponse.url})
             
                 originalUrlElement.value = ''
             }
