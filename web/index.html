@@ -28,10 +28,7 @@
                     method: "POST",
                     body: body, 
                     headers: { "Content-Type": "application/json" }
-                }).then(response => {const jsonResponse = response.json()
-                console.log(response)
-                document.getElementById("status").innerText = jsonResponse.url
-                })
+                }).then(response => response.json()).then(data => console.log(data))
             
                 originalUrlElement.value = ''
             }
