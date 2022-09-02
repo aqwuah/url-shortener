@@ -29,7 +29,7 @@
                     body: body, 
                     headers: { "Content-Type": "application/json" }
                 }).then(response => {const jsonResponse = response.json()
-                document.getElementById("status").innerText = jsonResponse.url})
+                document.getElementById("status").innerText = jsonResponse.url}).then(console.log(jsonResponse))
             
                 originalUrlElement.value = ''
             }
